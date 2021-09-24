@@ -1,32 +1,20 @@
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 import React from "react";
+import StatisticalData from "./statisticalData/StatisticalData";
+import s from "./Statistic.module.css";
 
-const Statistic = ({ statdata }) => {
-  const { id, label, percentage } = statdata;
+const Statistic = ({ title, statdata }) => {
   return (
-    <section class="statistics">
-      <h2 class="title">Upload stats</h2>
+    <section className={s.statistics}>
+      {title && <h2 class={s.title}>UPLOAD STATS</h2>}
 
-      <ul class="stat-list" key={id}>
-        {statdata.map((st) => (
-          <li class="item">
-            <span class="label">{label}</span>
-            <span class="percentage">{percentage}</span>
-          </li>
+      <ul className={s.statList}>
+        {statdata.map((statItem) => (
+          <StatisticalData statItem={statItem} />
         ))}
       </ul>
     </section>
   );
-};
-
-Statistic.propType = {
-  statdata: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string,
-      lable: PropTypes.string,
-      percentage: PropTypes.number,
-    })
-  ).isRequired,
 };
 
 export default Statistic;

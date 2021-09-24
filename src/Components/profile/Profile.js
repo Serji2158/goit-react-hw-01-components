@@ -1,21 +1,22 @@
 import PropTypes from "prop-types";
 import React from "react";
+import s from "./Profile.module.css";
 
 const Profile = ({ user }) => {
   const { name, tag, location, avatar, stats } = user;
   return (
-    <div class="profile">
-      <div class="description">
-        <img src={avatar} alt={avatar} class="avatar" />
-        <p class="name">{name}</p>
-        <p class="tag">@{tag}</p>
-        <p class="location">{location}</p>
+    <div className={s.profile}>
+      <div className={s.description}>
+        <img src={avatar} alt={avatar} className={s.avatar} />
+        <p className={s.name}>{name}</p>
+        <p className={s.tag}>@{tag}</p>
+        <p className={s.location}>{location}</p>
       </div>
-      <ul class="statistic">
+      <ul className={s.statistic}>
         {Object.entries(stats).map(([key, value]) => (
-          <li key={value}>
-            <span class="label">{key}</span>
-            <span class="quantity">{value}</span>
+          <li className={s.statItem} key={value}>
+            <span className={s.label}>{key}</span>
+            <span className={s.quantity}>{value}</span>
           </li>
         ))}
       </ul>

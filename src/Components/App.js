@@ -1,12 +1,12 @@
 import React from "react";
 import Profile from "./profile/Profile";
 import Friends from "./friends/Friends";
-// import Statistic from "./statistic/Statistic";
-import Transaction from "./transaction/Transaction";
+import Statistic from "./statistic/Statistic";
+import TransactionHistory from "./transaction/TransactionHistory";
 
 import user from "../data/user.json";
 import friends from "../data/friends.json";
-// import statdata from "../data/statdata.json";
+import statdata from "../data/statdata.json";
 import transactions from "../data/transactions.json";
 
 const App = () => {
@@ -14,8 +14,8 @@ const App = () => {
     <>
       <Profile user={user} />
       <Friends friends={friends} />
-      {/* <Statistic statdata={statdata} /> */}
-      <Transaction transactions={transactions} />
+      <Statistic statdata={statdata} title="Upload stats" />
+      <TransactionHistory items={transactions} />
     </>
   );
 };
