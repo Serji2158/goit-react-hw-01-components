@@ -5,12 +5,12 @@ import s from "./FriendsListItem.module.css";
 const FriendsListItem = ({ friend }) => {
   const { avatar, name, isOnline, id } = friend;
   return (
-    <li class={s.item} key={id}>
-      <span class={isOnline ? s.statusOnline : s.statusOffline}>
+    <li className={s.item} key={id}>
+      <span className={isOnline ? s.statusOnline : s.statusOffline}>
         {isOnline}
       </span>
-      <img class={s.avatar} src={avatar} alt={id} width="48" />
-      <p class={s.name}>{name}</p>
+      <img className={s.avatar} src={avatar} alt={id} width="48" />
+      <p className={s.name}>{name}</p>
     </li>
   );
 };
