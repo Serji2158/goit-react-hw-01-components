@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 import s from "./StatisticalData.module.css";
 
 const StatisticalData = ({ statItem }) => {
-  const { id, label, percentage } = statItem;
+  const { label, percentage } = statItem;
   return (
-    <li className={s.statItem} key={id}>
+    <li className={s.statItem}>
       <span className={s.label}>{label}</span>
       <span className={s.percentage}>{percentage}</span>
     </li>
@@ -15,7 +15,6 @@ const StatisticalData = ({ statItem }) => {
 StatisticalData.propType = {
   statItem: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.string,
       lable: PropTypes.string,
       percentage: PropTypes.number,
     })

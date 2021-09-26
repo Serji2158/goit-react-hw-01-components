@@ -1,5 +1,5 @@
-// import PropTypes from "prop-types";
 import React from "react";
+import PropTypes from "prop-types";
 import StatisticalData from "./statisticalData/StatisticalData";
 import s from "./Statistic.module.css";
 
@@ -15,6 +15,16 @@ const Statistic = ({ title, statdata }) => {
       </ul>
     </section>
   );
+};
+
+Statistic.propType = {
+  title: PropTypes.string,
+  statdata: PropTypes.arrayOf(
+    PropTypes.shape({
+      lable: PropTypes.string,
+      percentage: PropTypes.number,
+    })
+  ).isRequired,
 };
 
 export default Statistic;

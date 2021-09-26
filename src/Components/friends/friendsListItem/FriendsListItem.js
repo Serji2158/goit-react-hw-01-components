@@ -5,7 +5,7 @@ import s from "./FriendsListItem.module.css";
 const FriendsListItem = ({ friend }) => {
   const { avatar, name, isOnline, id } = friend;
   return (
-    <li className={s.item} key={id}>
+    <li className={s.item}>
       <span className={isOnline ? s.statusOnline : s.statusOffline}>
         {isOnline}
       </span>
