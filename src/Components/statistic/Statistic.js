@@ -10,7 +10,7 @@ const Statistic = ({ title, statdata }) => {
 
       <ul className={s.statList}>
         {statdata.map((statItem) => (
-          <StatisticalData statItem={statItem} />
+          <StatisticalData statItem={statItem} key={statdata.id} />
         ))}
       </ul>
     </section>
